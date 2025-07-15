@@ -5,7 +5,7 @@ using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
 public class Validator : AbstractValidator<Request>
 {

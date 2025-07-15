@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
 internal class Endpoint : IEndpoint
 {

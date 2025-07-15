@@ -3,7 +3,7 @@ using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using System.Text.Json.Serialization;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
 public record Request : IRequest, IUserRequest
 {

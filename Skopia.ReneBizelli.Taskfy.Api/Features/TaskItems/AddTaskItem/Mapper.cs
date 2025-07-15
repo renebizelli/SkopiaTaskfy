@@ -1,6 +1,6 @@
 ﻿using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
 public static class Mapper
 {

@@ -1,7 +1,7 @@
 ﻿using OneOf;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItem;
 
 public class Response : OneOfBase<ResponseType, ErrorType>
 {

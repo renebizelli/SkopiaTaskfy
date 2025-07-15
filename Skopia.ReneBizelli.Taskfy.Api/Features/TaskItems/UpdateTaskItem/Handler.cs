@@ -7,7 +7,7 @@ using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
 using System.Text.Json;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItem;
 
 internal class Handler : IRequestHandler<Request, Response>
 {

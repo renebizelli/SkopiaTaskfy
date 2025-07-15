@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItems;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItem;
 
 public class Validator : AbstractValidator<Request>
 {
