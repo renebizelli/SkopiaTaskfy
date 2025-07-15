@@ -37,7 +37,7 @@ public class Validator : AbstractValidator<Request>
         .MustAsync(CheckIfProjectExists).WithMessage("INVALID_RESPONSIBLE");
 
         RuleFor(x => x.UserResponsibleExternalId)
-        .Must(g => string.IsNullOrEmpty(g) || Guid.TryParse(g, out _)).WithMessage("INVALID_PROJECT_EXTERNAL_ID")
+        .Must(g => string.IsNullOrEmpty(g) || Guid.TryParse(g, out _)).WithMessage("INVALID_USER_EXTERNAL_ID")
         .MustAsync(CheckIfUserExists)
         .When(w => !string.IsNullOrEmpty(w.UserResponsibleExternalId))
         .WithMessage("INVALID_RESPONSIBLE");

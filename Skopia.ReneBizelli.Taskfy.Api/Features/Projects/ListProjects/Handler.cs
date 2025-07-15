@@ -20,6 +20,7 @@ internal class Handler : IRequestHandler<Request, ResultMany<Response>>
             .UserScope(request.UserId)
             .Where(s => s.Active)
             .IsActive()
+            .OrderBy(o => o.Name)
             .Select(s => s.Map(request.UserId))
             .ToListAsync(cancellationToken);
 

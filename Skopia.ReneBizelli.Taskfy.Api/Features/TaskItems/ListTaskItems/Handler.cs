@@ -21,6 +21,7 @@ internal class Handler : IRequestHandler<Request, ResultMany<Response>>
             .Where(s => s.Active)
             .Where(w => w.Project!.ExternalId == request.ProjecExternalId)
             .IsActive()
+            .OrderBy(o => o.Title)
             .Select(s =>  s.Map(request.UserId))
             .ToListAsync(cancellationToken);
 
