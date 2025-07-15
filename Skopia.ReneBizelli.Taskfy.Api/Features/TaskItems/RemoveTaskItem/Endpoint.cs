@@ -2,18 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItem;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.RemoveTaskItem;
 
 internal class Endpoint : IEndpoint
 {
     public void AddEndpoint(IEndpointRouteBuilder endpointBuilder)
     {
-        endpointBuilder.MapPut("/taskitems/{taskItemExternalId}", Handler);
+        endpointBuilder.MapDelete("/taskitems/{externalId}", Handler);
     }
 
-    public async Task<IResult> Handler(ISender sender, [FromRoute] Guid taskItemExternalId, [FromBody] Request request, CancellationToken cancellationToken)
+    public async Task<IResult> Handler(ISender sender, [FromRoute] Guid externalId, CancellationToken cancellationToken)
     {
-        request.TaskExternalId = taskItemExternalId;
+        var request = new Request(externalId);
 
         var response = await sender.Send(request, cancellationToken);
 

@@ -11,7 +11,7 @@ internal class Endpoint : IEndpoint
         endpointBuilder.MapGet("/taskitems/projects/{projectExternalId}", Handler);
     }
 
-    public async Task<IResult> Handler(ISender sender, [FromRoute] string projectExternalId, CancellationToken cancellationToken)
+    public async Task<IResult> Handler(ISender sender, [FromRoute] Guid projectExternalId, CancellationToken cancellationToken)
     {
         var request = new Request(projectExternalId);
 

@@ -12,11 +12,19 @@ public record Request : IRequest, IUserRequest
     public DateTime DueAt { get; set; } = DateTime.Now;
     public PriorityTaskItem Priority { get; set; }
     public StatusTaskItem Status { get; set; }
-    public string UserResponsibleExternalId { get; set; } = string.Empty;
+    public string ResponsibleExternalId { get; set; } = string.Empty;
+    public Guid UserExternalId
+    {
+        get
+        {
+            Guid.TryParse(ResponsibleExternalId, out var guid);
+            return guid;
+        }
+    }
     public int UserId { get; set; }
 
     [JsonIgnore]
-    public string ProjectExternalId { get; set; } = string.Empty;
+    public Guid ProjectExternalId { get; set; } = Guid.Empty;
 }
 
 

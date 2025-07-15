@@ -11,7 +11,7 @@ internal class Endpoint : IEndpoint
         endpointBuilder.MapPost("/taskitems/projects/{projectExternalId}", Handler);
     }
 
-    public async Task<IResult> Handler(ISender sender, [FromRoute] string projectExternalId, [FromBody] Request request, CancellationToken cancellationToken)
+    public async Task<IResult> Handler(ISender sender, [FromRoute] Guid projectExternalId, [FromBody] Request request, CancellationToken cancellationToken)
     {
         request.ProjectExternalId = projectExternalId;
 

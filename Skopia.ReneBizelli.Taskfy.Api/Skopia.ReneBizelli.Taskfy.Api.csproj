@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Skopia.ReneBizelli.Taskfy._Shared\Skopia.ReneBizelli.Taskfy._Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\TaskItems\RemoveTaskItem\" />
-  </ItemGroup>
-
 </Project>

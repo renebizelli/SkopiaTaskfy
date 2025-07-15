@@ -34,7 +34,7 @@ internal class Handler : IRequestHandler<Request, Response>
 
         try
         {
-            await AttachUserResponsibleAsync(taskItem, request.UserResponsibleExternalId, cancellationToken);
+            await AttachUserResponsibleAsync(taskItem, request.UserExternalId, cancellationToken);
 
             await AddHistoryAsync(editedFields, taskItem, request, cancellationToken);
 
@@ -53,18 +53,15 @@ internal class Handler : IRequestHandler<Request, Response>
 
     private async Task<TaskItem?> GetTaskItemAsync(Request request, CancellationToken cancellationToken)
     {
-        var externalId = Guid.Parse(request.TaskExternalId);
-
-        var taskItem = await _context.TaskItems.FirstOrDefaultAsync(f => f.ExternalId.Equals(externalId), cancellationToken);
+        var taskItem = await _context.TaskItems.FirstOrDefaultAsync(f => f.ExternalId.Equals(request.TaskExternalId), cancellationToken);
         return taskItem;
     }
 
-    private async Task AttachUserResponsibleAsync(TaskItem taskItem, string userResponsibleExternalId, CancellationToken cancellationToken)
+    private async Task AttachUserResponsibleAsync(TaskItem taskItem, Guid userExternalId, CancellationToken cancellationToken)
     {
-        if (!string.IsNullOrEmpty(userResponsibleExternalId))
+        if (!userExternalId.Equals(Guid.Empty))
         {
-            var externalId = Guid.Parse(userResponsibleExternalId);
-            var user = await _context.Users.FirstOrDefaultAsync(f => f.ExternalId.Equals(externalId), cancellationToken);
+            var user = await _context.Users.FirstOrDefaultAsync(f => f.ExternalId.Equals(userExternalId), cancellationToken);
             taskItem.User = user;
         }
     }

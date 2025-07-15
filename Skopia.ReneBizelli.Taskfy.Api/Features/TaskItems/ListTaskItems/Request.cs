@@ -7,10 +7,10 @@ namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.ListTaskItems;
 internal record Request : IRequest<ResultMany<Response>>, IUserRequest
 {
     public int UserId { get; set; }
-    public Guid ProjecExternalId { get; init; }
+    public Guid ProjecExternalId { get; set; } = Guid.Empty;
 
-    public Request(string projecExternalId)
+    public Request(Guid projecExternalId)
     {
-        ProjecExternalId = Guid.Parse(projecExternalId);
+        ProjecExternalId = projecExternalId;
     }
 }

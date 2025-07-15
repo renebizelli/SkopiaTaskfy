@@ -10,9 +10,18 @@ public record Request : IRequest<Response>, IUserRequest
     public string Description { get; set; } = string.Empty;
     public DateTime DueAt { get; set; } = DateTime.Now;
     public StatusTaskItem Status { get; set; }
-    public string UserResponsibleExternalId { get; set; } = string.Empty;
-    public string TaskExternalId { get; set; } = string.Empty;
+    public string ResponsibleExternalId { get; set; } = string.Empty;
+    public Guid TaskExternalId { get; set; } = Guid.Empty;
     public int UserId { get; set; }
+
+    public Guid UserExternalId
+    {
+        get
+        {
+            Guid.TryParse(ResponsibleExternalId, out var guid);
+            return guid;
+        }
+    }
 }
 
 

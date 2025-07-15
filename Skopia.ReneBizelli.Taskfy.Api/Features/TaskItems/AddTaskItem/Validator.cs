@@ -33,20 +33,18 @@ public class Validator : AbstractValidator<Request>
         .NotEqual(PriorityTaskItem.None).WithMessage("INVALID_PRIORITY");
 
         RuleFor(x => x.ProjectExternalId)
-        .Must(g => Guid.TryParse(g, out _)).WithMessage("INVALID_PROJECT_EXTERNAL_ID")
+        .NotEqual(Guid.Empty).WithMessage("INVALID_PROJECT_EXTERNAL_ID")
         .MustAsync(CheckIfProjectExists).WithMessage("INVALID_RESPONSIBLE");
 
-        RuleFor(x => x.UserResponsibleExternalId)
-        .Must(g => string.IsNullOrEmpty(g) || Guid.TryParse(g, out _)).WithMessage("INVALID_USER_EXTERNAL_ID")
+        RuleFor(x => x.UserExternalId)
+        .NotEqual(Guid.Empty).WithMessage("INVALID_USER_EXTERNAL_ID")
         .MustAsync(CheckIfUserExists)
-        .When(w => !string.IsNullOrEmpty(w.UserResponsibleExternalId))
+        .When(w => !w.UserExternalId.Equals(Guid.Empty))
         .WithMessage("INVALID_RESPONSIBLE");
 
         RuleFor(r => r).CustomAsync(async (o, context, cancellationToken) =>
         {
-            var externalId = Guid.Parse(o.ProjectExternalId);
-
-            var project = await _context.Projects.AsNoTracking().FirstOrDefaultAsync(a => a.ExternalId.Equals(externalId), cancellationToken);
+            var project = await _context.Projects.AsNoTracking().FirstOrDefaultAsync(a => a.ExternalId.Equals(o.ProjectExternalId), cancellationToken);
 
             var count = _context.TaskItems.Where(w => w.Active).Count(f => f.ProjectId.Equals(project!.Id));
 
@@ -57,17 +55,9 @@ public class Validator : AbstractValidator<Request>
         });
     }
 
-    private async Task<bool> CheckIfUserExists(string userExternalId, CancellationToken cancellationToken)
-    {
-        var externalId = Guid.Parse(userExternalId);
+    private async Task<bool> CheckIfUserExists(Guid userExternalId, CancellationToken cancellationToken)
+        => await _context.Users.AsNoTracking().AnyAsync(a => a.ExternalId.Equals(userExternalId), cancellationToken);
 
-        return await _context.Users.AsNoTracking().AnyAsync(a => a.ExternalId.Equals(externalId), cancellationToken);
-    }
-
-    private async Task<bool> CheckIfProjectExists(string projectExternalId, CancellationToken cancellationToken)
-    {
-        var externalId = Guid.Parse(projectExternalId);
-
-        return await _context.Projects.AsNoTracking().AnyAsync(a => a.ExternalId.Equals(externalId), cancellationToken);
-    }
+    private async Task<bool> CheckIfProjectExists(Guid projectExternalId, CancellationToken cancellationToken)
+        => await _context.Projects.AsNoTracking().AnyAsync(a => a.ExternalId.Equals(projectExternalId), cancellationToken);
 }

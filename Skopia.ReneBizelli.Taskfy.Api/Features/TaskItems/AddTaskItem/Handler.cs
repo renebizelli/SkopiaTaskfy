@@ -24,26 +24,24 @@ internal class Handler : IRequestHandler<Request>
 
         await AttachProjectAsync(taskItem, request.ProjectExternalId, cancellationToken);
 
-        await AttachUserResponsibleAsync(taskItem, request.UserResponsibleExternalId, cancellationToken);
+        await AttachUserResponsibleAsync(taskItem, request.UserExternalId, cancellationToken);
 
         await _context.TaskItems.AddAsync(taskItem, cancellationToken);
         
         await _context.SaveChangesAsync(cancellationToken);
     }
 
-    private async Task AttachProjectAsync(TaskItem taskItem, string projectExternalId, CancellationToken cancellationToken)
+    private async Task AttachProjectAsync(TaskItem taskItem, Guid projectExternalId, CancellationToken cancellationToken)
     {
-        var externalId = Guid.Parse(projectExternalId);
-        var project = await _context.Projects.FirstOrDefaultAsync(f => f.ExternalId.Equals(externalId), cancellationToken);
+        var project = await _context.Projects.FirstOrDefaultAsync(f => f.ExternalId.Equals(projectExternalId), cancellationToken);
         taskItem.Project = project;
     }
 
-    private async Task AttachUserResponsibleAsync(TaskItem taskItem, string userResponsibleExternalId, CancellationToken cancellationToken)
+    private async Task AttachUserResponsibleAsync(TaskItem taskItem, Guid userExternalId, CancellationToken cancellationToken)
     {
-        if (!string.IsNullOrEmpty(userResponsibleExternalId))
+        if (!userExternalId.Equals(Guid.Empty))
         {
-            var externalId = Guid.Parse(userResponsibleExternalId);
-            var user = await _context.Users.FirstOrDefaultAsync(f => f.ExternalId.Equals(externalId), cancellationToken);
+            var user = await _context.Users.FirstOrDefaultAsync(f => f.ExternalId.Equals(userExternalId), cancellationToken);
             taskItem.User = user;
         }
     }
