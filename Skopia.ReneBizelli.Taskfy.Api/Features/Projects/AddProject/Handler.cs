@@ -3,11 +3,10 @@ using Microsoft.Extensions.Options;
 using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
-using System.Runtime;
 
 namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
 
-internal class Handler : IRequestHandler<Request>
+internal class Handler : IRequestHandler<Request, Response>
 {
     private readonly TaskfyDBContext _context;
     private readonly ProjectSettings _settings;
@@ -18,7 +17,7 @@ internal class Handler : IRequestHandler<Request>
         _settings = options.Value;
     }
 
-    public async Task Handle(Request request, CancellationToken cancellationToken)
+    public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
     {
         var project = request.Map(_settings.TaskItemsLimit, request.UserId);
 
@@ -27,6 +26,8 @@ internal class Handler : IRequestHandler<Request>
         await _context.Projects.AddAsync(project);
 
         await _context.SaveChangesAsync(cancellationToken);
+
+        return new Response();
     }
 
     private void AttachUser(Request request, Project project)
