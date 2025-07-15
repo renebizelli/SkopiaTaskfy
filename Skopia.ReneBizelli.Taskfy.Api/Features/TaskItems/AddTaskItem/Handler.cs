@@ -6,7 +6,6 @@ using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database.QueryExtensions;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
-using System.Threading;
 
 namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
