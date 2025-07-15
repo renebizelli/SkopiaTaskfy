@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProjects;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProject;
 
 internal class Endpoint : IEndpoint
 {
