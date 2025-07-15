@@ -42,17 +42,7 @@ public class Validator : AbstractValidator<Request>
         .When(w => !w.UserExternalId.Equals(Guid.Empty))
         .WithMessage("INVALID_RESPONSIBLE");
 
-        RuleFor(r => r).CustomAsync(async (o, context, cancellationToken) =>
-        {
-            var project = await _context.Projects.AsNoTracking().FirstOrDefaultAsync(a => a.ExternalId.Equals(o.ProjectExternalId), cancellationToken);
 
-            var count = _context.TaskItems.Where(w => w.Active).Count(f => f.ProjectId.Equals(project!.Id));
-
-            if(count == project!.TaskItemsLimit)
-            {
-                context.AddFailure("EXCEEDED_NUMBER_OF_TASKS");
-            }
-        });
     }
 
     private async Task<bool> CheckIfUserExists(Guid userExternalId, CancellationToken cancellationToken)
