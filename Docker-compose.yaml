@@ -1,0 +1,16 @@
+services:
+    sqlserver:
+        image:  mcr.microsoft.com/mssql/server
+        container_name: sqlserver
+        user: root
+        ports:
+            - "1433:1433"
+        environment:
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "taskfy,123!"
+            MSSQL_PID: "Developer"
+        volumes:
+            - ./data:/var/opt/mssql/data
+    
+volumes:
+  data:
