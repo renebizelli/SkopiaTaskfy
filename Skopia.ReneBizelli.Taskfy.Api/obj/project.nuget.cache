@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "hZX1jGAaChQ=",
+  "success": true,
+  "projectFilePath": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\René\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
