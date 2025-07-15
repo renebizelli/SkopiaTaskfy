@@ -1,4 +1,5 @@
 using MediatR;
+using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using System.Reflection;
 
@@ -9,9 +10,12 @@ ArgumentNullException.ThrowIfNull(assembly);
 
 var services = builder.Services;
 
+services.AddHttpContextAccessor();
+
 services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(assembly);
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UserRequestBehavior<,>));
 });
 
 services.AddEndpoints(assembly);
