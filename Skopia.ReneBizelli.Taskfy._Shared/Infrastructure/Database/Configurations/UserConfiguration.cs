@@ -16,6 +16,7 @@ internal class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.ExternalId).HasColumnType(SqlDbType.UniqueIdentifier.ToString()).IsRequired();
         builder.Property(x => x.Name).HasMaxLength(128).IsRequired();
         builder.Property(x => x.Name).HasMaxLength(256).IsRequired();
+        builder.Property(x => x.Active).IsRequired();
         builder.Property(x => x.Role).HasColumnType(SqlDbType.TinyInt.ToString()).IsRequired();
     }
 }

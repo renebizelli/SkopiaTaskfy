@@ -12,12 +12,12 @@ public class TaskItem
     public StatusTaskItem Status { get; set; }
     public PriorityTaskItem Priority { get; set; }
     public int ProjectId { get; set; }
-    public virtual Project? Project { get; set; }
+    public Project? Project { get; set; }
 
     public ICollection<TaskItemHistory> History { get; set; } = new List<TaskItemHistory>();
 
     public int? UserId { get; set; }
-    public virtual User? User { get; set; }
+    public User? User { get; set; }
 }
 
 public enum StatusTaskItem : byte

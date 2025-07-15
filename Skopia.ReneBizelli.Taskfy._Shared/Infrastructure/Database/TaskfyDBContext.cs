@@ -13,7 +13,7 @@ public class TaskfyDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(TaskfyDBContext).Assembly); 
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(TaskfyDBContext).Assembly);
 
         base.OnModelCreating(modelBuilder);
     }

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Skopia.ReneBizelli.Taskfy.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d59914f7d1d7837d935551c61769c4da3d939986")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89bcfc81a9fbde0f51686f2bc54bb3f316f70370")]
 [assembly: System.Reflection.AssemblyProductAttribute("Skopia.ReneBizelli.Taskfy.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Skopia.ReneBizelli.Taskfy.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

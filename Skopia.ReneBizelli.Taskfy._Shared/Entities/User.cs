@@ -7,6 +7,7 @@ public class User
     public string Name { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public UserRoles Role { get; set; }
+    public bool Active { get; set; }
     public ICollection<Project> Projects { get; set; } = new List<Project>();
     public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
     public ICollection<TaskItemHistory> History { get; set; } = new List<TaskItemHistory>();
