@@ -1,11 +1,13 @@
+using FluentValidation;
 using MediatR;
-using Microsoft.Data.SqlClient;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy._Shared.Services.User;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
+using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Validators;
+using Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
+using Skopia.ReneBizelli.Taskfy.Api.GlobalException;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using System.Reflection;
-using System.Runtime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +20,18 @@ services.AddHttpContextAccessor();
 
 services.AddMemoryCache();
 
+
 services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(assembly);
+    cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
     cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UserRequestBehavior<,>));
 });
+
+services.AddValidatorsFromAssembly(assembly);
+
+services.AddExceptionHandler<GlobalExceptionHandler>();
+services.AddProblemDetails();
 
 services.AddTaskfyDBContext(builder.Configuration);
 
@@ -34,6 +43,7 @@ services.Configure<ProjectSettings>(builder.Configuration.GetSection("Features:P
 
 var app = builder.Build();
 
+app.UseExceptionHandler();
 
 app.MapEndpoints();
 
