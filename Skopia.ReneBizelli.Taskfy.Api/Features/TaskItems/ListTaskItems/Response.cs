@@ -11,12 +11,12 @@ internal record Response
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public StatusTaskItem Status { get; set; }
     public PriorityTaskItem Priority { get; set; }
-    public User? User { get; set; }
+    public Responsible? Responsible { get; set; }
 }
 
-internal record User
+internal record Responsible
 {
-    public Guid ExternalId { get; set; } 
+    public Guid UserExternalId { get; set; } 
     public string Name { get; set; } = string.Empty;
     public bool Me { get; set; }
 }

@@ -1,10 +1,8 @@
 using FluentValidation;
 using MediatR;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
-using Skopia.ReneBizelli.Taskfy._Shared.Services.User;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Validators;
-using Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
 using Skopia.ReneBizelli.Taskfy.Api.GlobalException;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using System.Reflection;
@@ -34,8 +32,6 @@ services.AddExceptionHandler<GlobalExceptionHandler>();
 services.AddProblemDetails();
 
 services.AddTaskfyDBContext(builder.Configuration);
-
-services.AddUserService();
 
 services.AddEndpoints(assembly);
 

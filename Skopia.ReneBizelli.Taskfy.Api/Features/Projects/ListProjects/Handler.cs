@@ -9,7 +9,6 @@ namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProjects;
 internal class Handler : IRequestHandler<Request, ResultMany<Response>>
 {
     private readonly TaskfyDBContext _context;
-
     public Handler(TaskfyDBContext context)
     {
         _context = context;

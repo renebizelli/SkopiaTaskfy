@@ -1,5 +1,6 @@
 ﻿using MediatR;
-using Skopia.ReneBizelli.Taskfy._Shared.Services.User;
+using Microsoft.EntityFrameworkCore;
+using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 
 namespace Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 
@@ -7,15 +8,15 @@ public class UserRequestBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
     where TRequest : IUserRequest
     where TResponse : notnull
 {
+    private readonly TaskfyDBContext _taskfyDBContext;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly IUserServices _userService;
 
     public UserRequestBehavior(
-        IHttpContextAccessor httpContextAccessor,
-        IUserServices userService)
+        TaskfyDBContext taskfyDBContext,
+        IHttpContextAccessor httpContextAccessor )
     {
+        _taskfyDBContext = taskfyDBContext;
         _httpContextAccessor = httpContextAccessor;
-        _userService = userService;
     }
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
@@ -24,7 +25,9 @@ public class UserRequestBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
 
         Guid.TryParse(userIdHeader, out var userExternalId);
 
-        var user = await _userService.GetUserExternalIdAsync(userExternalId, cancellationToken);
+        var user = await _taskfyDBContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(f => f.ExternalId.Equals(userExternalId), cancellationToken);
 
         if (user == null)
         {

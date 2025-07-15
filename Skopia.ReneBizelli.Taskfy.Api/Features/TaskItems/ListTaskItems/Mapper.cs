@@ -12,16 +12,16 @@ internal static class Mapper
          Status = taskItem.Status,
          Priority = taskItem.Priority,
          CreatedAt = taskItem.CreatedAt,
-         User = taskItem.User.Map(userId)
+         Responsible = taskItem.User.Map(userId)
      };
 
-    public static User? Map(this _Shared.Entities.User? user, int userId)
+    public static Responsible? Map(this _Shared.Entities.User? user, int userId)
     {
         if (user == null) return null;
 
-        return new User
+        return new Responsible
         {
-            ExternalId = user.ExternalId,
+            UserExternalId = user.ExternalId,
             Name = user.Name,
             Me = user.Id == userId
         };

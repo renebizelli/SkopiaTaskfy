@@ -8,7 +8,7 @@ internal class Endpoint : IEndpoint
 {
     public void AddEndpoint(IEndpointRouteBuilder endpointBuilder)
     {
-        endpointBuilder.MapGet("/taskitems/{projectExternalId}", Handler);
+        endpointBuilder.MapGet("/taskitems/projects/{projectExternalId}", Handler);
     }
 
     public async Task<IResult> Handler(ISender sender, [FromRoute] string projectExternalId, CancellationToken cancellationToken)

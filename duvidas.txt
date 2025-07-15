@@ -10,5 +10,6 @@
 criar indices
 criar testes
 swagger
+logs
 
 trava para somente gerente criar projeto

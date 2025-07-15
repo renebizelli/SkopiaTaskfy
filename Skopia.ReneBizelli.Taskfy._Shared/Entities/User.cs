@@ -4,8 +4,8 @@ public class User
 {
     public int Id { get; set; }
     public Guid ExternalId { get; set; }
-    public string? Name { get; set; }
-    public string? Email { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
     public UserRoles Role { get; set; }
     public bool Active { get; set; }
 
