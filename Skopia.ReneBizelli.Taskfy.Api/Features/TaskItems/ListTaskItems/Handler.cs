@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
-using Skopia.ReneBizelli.Taskfy.Api.Utils;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database.QueryExtensions;
+using Skopia.ReneBizelli.Taskfy.Api.Utils;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProjects;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.ListTaskItems;
 
 internal class Handler : IRequestHandler<Request, ResultMany<Response>>
 {
@@ -16,15 +16,16 @@ internal class Handler : IRequestHandler<Request, ResultMany<Response>>
     }
     public async Task<ResultMany<Response>> Handle(Request request, CancellationToken cancellationToken)
     {
-        var projects = await _context.Projects
+        var taskItems = await _context.TaskItems.Include(i => i.User)
             .UserScope(request.UserId)
             .Where(s => s.Active)
+            .Where(w => w.Project!.ExternalId == request.ProjecExternalId)
             .IsActive()
-            .Select(s => s.Map()).ToListAsync();
+            .Select(s =>  s.Map(request.UserId))
+            .ToListAsync();
 
-        var results = new ResultMany<Response>(projects);
+        var results = new ResultMany<Response>(taskItems);
 
         return results;
     }
-
 }

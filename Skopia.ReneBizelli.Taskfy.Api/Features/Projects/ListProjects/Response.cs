@@ -1,4 +1,4 @@
-﻿namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProject;
+﻿namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProjects;
 
 internal record Response
 {
