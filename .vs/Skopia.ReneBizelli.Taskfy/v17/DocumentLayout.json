@@ -1,12 +1,134 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C3A216A8-D81D-4FFD-9D33-BD803A98572A}|Skopia.ReneBizelli.Taskfy._Shared\\Skopia.ReneBizelli.Taskfy._Shared.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy._shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3A216A8-D81D-4FFD-9D33-BD803A98572A}|Skopia.ReneBizelli.Taskfy._Shared\\Skopia.ReneBizelli.Taskfy._Shared.csproj|solutionrelative:skopia.renebizelli.taskfy._shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\endpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\structure\\addendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\structure\\addendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|e:\\projetos\\tests\\skopia.renebizelli.taskfy\\skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F2051CB-F76A-4337-BABE-6DD7851DC0C8}|Skopia.ReneBizelli.Taskfy.Api\\Skopia.ReneBizelli.Taskfy.Api.csproj|solutionrelative:skopia.renebizelli.taskfy.api\\features\\projects\\listprojects\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy._Shared\\Class1.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy._Shared\\Class1.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy._Shared\\Class1.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy._Shared\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T05:05:58.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Program.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Program.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAgwA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:54:16.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEndpoints.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Structure\\AddEndpoints.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Structure\\AddEndpoints.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Structure\\AddEndpoints.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Structure\\AddEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:53:37.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Response.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Response.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Response.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Response.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Response.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:51:06.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Request.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Request.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Request.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Request.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Request.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:50:52.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Handler.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Handler.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Handler.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Handler.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Handler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:50:12.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Endpoint.cs",
+              "DocumentMoniker": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Endpoint.cs",
+              "RelativeDocumentMoniker": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Endpoint.cs",
+              "ToolTip": "E:\\Projetos\\tests\\Skopia.ReneBizelli.Taskfy\\Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Endpoint.cs",
+              "RelativeToolTip": "Skopia.ReneBizelli.Taskfy.Api\\Features\\Projects\\ListProjects\\Endpoint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T04:48:49.678Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
