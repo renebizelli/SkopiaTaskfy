@@ -7,7 +7,6 @@ namespace Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 
 public class TaskfyDBContext : DbContext
 {
-
     public TaskfyDBContext(DbContextOptions<TaskfyDBContext> options) : base(options)
     {
     }
@@ -42,7 +41,7 @@ public class TaskfyDBContextFactory : IDesignTimeDbContextFactory<TaskfyDBContex
     public TaskfyDBContext CreateDbContext(string[] args)
     {
         var configuration = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json", optional: true) // Use AddJsonFile directly
+            .AddJsonFile("appsettings.json", optional: true) 
             .Build();
 
         var optionsBuilder = new DbContextOptionsBuilder<TaskfyDBContext>();
