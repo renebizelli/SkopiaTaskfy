@@ -1,9 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
-using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
 using System.Text.Json;
 
@@ -12,12 +10,10 @@ namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.UpdateTaskItem;
 internal class Handler : IRequestHandler<Request, Response>
 {
     private readonly TaskfyDBContext _context;
-    private readonly ProjectSettings _settings;
 
-    public Handler(TaskfyDBContext context, IOptions<ProjectSettings> options)
+    public Handler(TaskfyDBContext context)
     {
         _context = context;
-        _settings = options.Value;
     }
 
     public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
@@ -52,10 +48,7 @@ internal class Handler : IRequestHandler<Request, Response>
     }
 
     private async Task<TaskItem?> GetTaskItemAsync(Request request, CancellationToken cancellationToken)
-    {
-        var taskItem = await _context.TaskItems.FirstOrDefaultAsync(f => f.ExternalId.Equals(request.TaskExternalId), cancellationToken);
-        return taskItem;
-    }
+        => await _context.TaskItems.FirstOrDefaultAsync(f => f.ExternalId.Equals(request.TaskExternalId), cancellationToken);
 
     private async Task AttachUserResponsibleAsync(TaskItem taskItem, Guid userExternalId, CancellationToken cancellationToken)
     {
