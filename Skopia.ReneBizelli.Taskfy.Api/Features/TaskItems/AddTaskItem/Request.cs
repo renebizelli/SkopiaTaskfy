@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
-public record Request : IRequest, IUserRequest
+public record Request : IRequest<Response>, IUserRequest
 {
     public string Title { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;

@@ -4,10 +4,11 @@ using Microsoft.Extensions.Options;
 using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
+using Skopia.ReneBizelli.Taskfy.Api.Utils;
 
 namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
-internal class Handler : IRequestHandler<Request>
+internal class Handler : IRequestHandler<Request, Response>
 {
     private readonly TaskfyDBContext _context;
     private readonly ProjectSettings _settings;
@@ -18,9 +19,14 @@ internal class Handler : IRequestHandler<Request>
         _settings = options.Value;
     }
 
-    public async Task Handle(Request request, CancellationToken cancellationToken)
+
+    public async Task<Response> Handle(Request request, CancellationToken cancellationToken)
     {
         var taskItem = request.Map();
+
+        var allowedInProject = _context.Projects.Any(a => a.Users.Any( a => a.Id.Equals(request.UserId)));
+
+        if (!allowedInProject) return new NotFoundErrorType();
 
         await AttachProjectAsync(taskItem, request.ProjectExternalId, cancellationToken);
 
@@ -29,6 +35,8 @@ internal class Handler : IRequestHandler<Request>
         await _context.TaskItems.AddAsync(taskItem, cancellationToken);
         
         await _context.SaveChangesAsync(cancellationToken);
+
+        return new AcceptType();
     }
 
     private async Task AttachProjectAsync(TaskItem taskItem, Guid projectExternalId, CancellationToken cancellationToken)

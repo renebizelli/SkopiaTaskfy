@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Skopia.ReneBizelli.Taskfy._Shared.Entities;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
+using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database.QueryExtensions;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
 using System.Text.Json;
 
@@ -48,7 +49,7 @@ internal class Handler : IRequestHandler<Request, Response>
     }
 
     private async Task<TaskItem?> GetTaskItemAsync(Request request, CancellationToken cancellationToken)
-        => await _context.TaskItems.FirstOrDefaultAsync(f => f.ExternalId.Equals(request.TaskExternalId), cancellationToken);
+        => await _context.TaskItems.UserScope(request.UserId).FirstOrDefaultAsync(f => f.ExternalId.Equals(request.TaskExternalId), cancellationToken);
 
     private async Task AttachUserResponsibleAsync(TaskItem taskItem, Guid userExternalId, CancellationToken cancellationToken)
     {
