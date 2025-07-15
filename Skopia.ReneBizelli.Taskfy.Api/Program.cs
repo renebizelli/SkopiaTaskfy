@@ -1,9 +1,11 @@
 using MediatR;
+using Microsoft.Data.SqlClient;
+using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
+using Skopia.ReneBizelli.Taskfy._Shared.Services.User;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using System.Reflection;
-using Skopia.ReneBizelli.Taskfy._Shared.Services.User;
-using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
+using System.Runtime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +30,10 @@ services.AddUserService();
 
 services.AddEndpoints(assembly);
 
+services.Configure<ProjectSettings>(builder.Configuration.GetSection("Features:Projects"));
+
 var app = builder.Build();
+
 
 app.MapEndpoints();
 

@@ -1,0 +1,14 @@
+- A quantidade de tasks por projetos será variável no futuro?
+
+- Na exibição da lista de projetos, será possível ver a quantidade de tasks pendentes?
+- Na exibição da lista de projetos, ordenaremos os projetos por ordem alfabética ou por data de criação?
+
+- Um projeto só pode ser adicionado por um Gerente?
+
+----------------------
+
+criar indices
+criar testes
+swagger
+
+trava para somente gerente criar projeto

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 
@@ -11,9 +12,11 @@ using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 namespace Skopia.ReneBizelli.Taskfy._Shared.Migrations
 {
     [DbContext(typeof(TaskfyDBContext))]
-    partial class TaskfyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250715141257_added-author-prop-notull")]
+    partial class addedauthorpropnotull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,17 +27,17 @@ namespace Skopia.ReneBizelli.Taskfy._Shared.Migrations
 
             modelBuilder.Entity("ProjectsUsers", b =>
                 {
-                    b.Property<int>("ProjectsId")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("ProjectsId", "UsersId");
+                    b.HasKey("ProjectId", "UserId");
 
-                    b.HasIndex("UsersId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("ProjectsUsers");
+                    b.ToTable("ProjectsUsers", (string)null);
                 });
 
             modelBuilder.Entity("Skopia.ReneBizelli.Taskfy._Shared.Entities.Project", b =>
@@ -62,7 +65,7 @@ namespace Skopia.ReneBizelli.Taskfy._Shared.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<int>("TaskItemsLimit")
+                    b.Property<int>("TaskLimit")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -167,6 +170,7 @@ namespace Skopia.ReneBizelli.Taskfy._Shared.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("ExternalId")
@@ -189,13 +193,13 @@ namespace Skopia.ReneBizelli.Taskfy._Shared.Migrations
                 {
                     b.HasOne("Skopia.ReneBizelli.Taskfy._Shared.Entities.Project", null)
                         .WithMany()
-                        .HasForeignKey("ProjectsId")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Skopia.ReneBizelli.Taskfy._Shared.Entities.User", null)
                         .WithMany()
-                        .HasForeignKey("UsersId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -15,7 +15,7 @@ internal class ProjectConfiguration : IEntityTypeConfiguration<Project>
         builder.Property(x => x.Id).ValueGeneratedOnAdd();
         builder.Property(x => x.ExternalId).HasColumnType(SqlDbType.UniqueIdentifier.ToString()).IsRequired();
         builder.Property(x => x.Name).HasMaxLength(64).IsRequired();
-        builder.Property(x => x.TaskLimit).IsRequired();
+        builder.Property(x => x.TaskItemsLimit).IsRequired();
         builder.Property(x => x.Active).IsRequired();
         builder.Property(x => x.CreatedAt).IsRequired();
 
@@ -23,25 +23,13 @@ internal class ProjectConfiguration : IEntityTypeConfiguration<Project>
                 .WithOne(o => o.Project)
                 .HasForeignKey(k => k.ProjectId);
 
+        builder.HasOne(o => o.Author)
+            .WithMany(m => m.AuthoredProjects)
+            .HasForeignKey(f => f.AuthorId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         builder.HasMany(p => p.Users)
             .WithMany(u => u.Projects)
-            .UsingEntity<Dictionary<string, object>>(
-        "ProjectsUsers",
-
-        j => j.HasOne<User>()
-              .WithMany()
-              .HasForeignKey("UserId")
-              .OnDelete(DeleteBehavior.Cascade),
-
-        j => j.HasOne<Project>()
-              .WithMany()
-              .HasForeignKey("ProjectId")
-              .OnDelete(DeleteBehavior.Cascade),
-
-        j =>
-        {
-            j.HasKey("ProjectId", "UserId");
-            j.ToTable("ProjectsUsers");
-        });
+            .UsingEntity("ProjectsUsers");
     }
 }

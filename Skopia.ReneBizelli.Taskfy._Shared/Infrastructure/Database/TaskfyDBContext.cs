@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 
@@ -32,6 +33,9 @@ public static class TaskfyDBContextConfiguration
         services.AddDbContext<TaskfyDBContext>( options =>
         {
             options.UseSqlServer(configuration.GetConnectionString("sqlTaskfy"));
+
+            options.EnableSensitiveDataLogging(); // 🔍 importante!
+            options.LogTo(Console.WriteLine, LogLevel.Information);
         });
     }
 }

@@ -38,6 +38,7 @@ internal class UserServices : IUserServices
     private async Task<Entities.User?> GetFromDbAsync(Guid userExternalId, CancellationToken cancellationToken)
     {
         return await _context.Users
+            .AsNoTracking()
             .Where(u => u.ExternalId == userExternalId && u.Active)
             .FirstOrDefaultAsync(cancellationToken);
     }

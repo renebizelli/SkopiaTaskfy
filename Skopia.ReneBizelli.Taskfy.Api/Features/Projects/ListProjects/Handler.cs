@@ -17,10 +17,12 @@ internal class Handler : IRequestHandler<Request, ResultMany<Response>>
     public async Task<ResultMany<Response>> Handle(Request request, CancellationToken cancellationToken)
     {
         var projects = await _context.Projects
+            .Include(i => i.Author)
             .UserScope(request.UserId)
             .Where(s => s.Active)
             .IsActive()
-            .Select(s => s.Map()).ToListAsync();
+            .Select(s => s.Map(request.UserId))
+            .ToListAsync(cancellationToken);
 
         var results = new ResultMany<Response>(projects);
 

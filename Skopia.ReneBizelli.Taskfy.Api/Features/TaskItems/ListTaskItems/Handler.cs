@@ -22,7 +22,7 @@ internal class Handler : IRequestHandler<Request, ResultMany<Response>>
             .Where(w => w.Project!.ExternalId == request.ProjecExternalId)
             .IsActive()
             .Select(s =>  s.Map(request.UserId))
-            .ToListAsync();
+            .ToListAsync(cancellationToken);
 
         var results = new ResultMany<Response>(taskItems);
 

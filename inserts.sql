@@ -5,7 +5,7 @@ INSERT INTO [Users] (Id, ExternalId, Name, Email, Role) VALUES
 (1, 'C98F144D-291C-4425-B234-0AB7625318FA', 'René Bizelli', 'rene.bizelli@company.com', 2),
 (2, '39B07325-81A5-4B23-B8D3-83800CB33C63', 'Julia Martins', 'julia.martins@company.com', 1),
 (3, '3AFD291D-6C94-41B2-90AD-7E18B0983EC6', 'Carlos Souza', 'carlos.souza@company.com', 1),
-(4, '4666F13C-63A8-4007-9765-C29B10323E94', 'Ana Paula', 'ana.paula@company.com', 2),
+(4, '4666F13C-63A8-4007-9765-C29B10323E94', 'Cristiane Cabral', 'ana.paula@company.com', 2),
 (5, '4336A98F-A3C2-4473-92A9-41192B11538B', 'Marcos Lima', 'marcos.lima@company.com', 1);
 
 SET IDENTITY_INSERT USERS OFF
@@ -14,17 +14,17 @@ SET IDENTITY_INSERT USERS OFF
 SET IDENTITY_INSERT [Projects] ON
 
 -- Projects
-INSERT INTO [Projects] (Id, ExternalId, Name, TaskLimit, Active, CreatedAt) VALUES
-(1, NEWID(), 'Taskfy Platform', 50, 1, GETDATE()),
-(2, NEWID(), 'Mobile App Redesign', 40, 1, GETDATE()),
-(3, NEWID(), 'API Integration', 30, 1, GETDATE()),
-(4, NEWID(), 'Marketing Website', 25, 1, GETDATE()),
-(5, NEWID(), 'Internal Tools', 20, 1, GETDATE()),
-(6, NEWID(), 'Customer Portal', 35, 1, GETDATE()),
-(7, NEWID(), 'Analytics Dashboard', 30, 1, GETDATE()),
-(8, NEWID(), 'Onboarding Flow', 15, 1, GETDATE()),
-(9, NEWID(), 'Notification Service', 20, 1, GETDATE()),
-(10, NEWID(), 'Billing System', 25, 1, GETDATE());
+INSERT INTO [Projects] (Id, ExternalId, Name, TaskLimit, Active, CreatedAt, AuthorId) VALUES
+(1, NEWID(), 'Taskfy Platform', 50, 1, GETDATE(), 1),
+(2, NEWID(), 'Mobile App Redesign', 40, 1, GETDATE(), 1),
+(3, NEWID(), 'API Integration', 30, 1, GETDATE(), 2),
+(4, NEWID(), 'Marketing Website', 25, 1, GETDATE(), 2),
+(5, NEWID(), 'Internal Tools', 20, 1, GETDATE(), 1),
+(6, NEWID(), 'Customer Portal', 35, 1, GETDATE(), 1),
+(7, NEWID(), 'Analytics Dashboard', 30, 1, GETDATE(), 2),
+(8, NEWID(), 'Onboarding Flow', 15, 1, GETDATE(), 1),
+(9, NEWID(), 'Notification Service', 20, 1, GETDATE() , 2),
+(10, NEWID(), 'Billing System', 25, 1, GETDATE(), 1);
 
 SET IDENTITY_INSERT [Projects] OFF
 
@@ -32,7 +32,7 @@ INSERT INTO [ProjectsUsers] (ProjectId, UserId) VALUES
 (1, 1), -- René Bizelli
 (1, 2), -- Julia Martins
 (1, 3), -- Carlos Souza
-(1, 4), -- Ana Paula
+(1, 4), -- Cristiane Cabral
 (1, 5), -- Marcos Lima
 (2, 1),
 (3, 2),
@@ -42,7 +42,14 @@ INSERT INTO [ProjectsUsers] (ProjectId, UserId) VALUES
 (5, 1),
 (5, 2),
 (5, 4),
-(5, 5);
+(5, 5),
+(3, 5),
+(4, 5),
+(6, 1),
+(7, 5),
+(8, 1),
+(9, 5),
+(10, 1)
 
 
 SET IDENTITY_INSERT [TaskItems] ON
