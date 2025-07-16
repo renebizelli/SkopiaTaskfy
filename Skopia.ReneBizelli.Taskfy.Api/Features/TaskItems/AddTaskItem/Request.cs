@@ -22,6 +22,7 @@ public record Request : IRequest<Response>, IUserRequest
         }
     }
     public int UserId { get; set; }
+    public UserRoles UserRole { get; set; } = UserRoles.None;
 
     [JsonIgnore]
     public Guid ProjectExternalId { get; set; } = Guid.Empty;

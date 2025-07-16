@@ -35,6 +35,7 @@ public class UserRequestBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
         }
 
         request.UserId = user.Id;
+        request.UserRole = user.Role;
 
         return await next();
     }

@@ -1,6 +1,7 @@
 using FluentValidation;
 using MediatR;
 using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
+using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Manager;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Validators;
 using Skopia.ReneBizelli.Taskfy.Api.GlobalException;
@@ -24,6 +25,7 @@ services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(assembly);
     cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
     cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(UserRequestBehavior<,>));
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ManagerBehavior<,>));
 });
 
 services.AddValidatorsFromAssembly(assembly);

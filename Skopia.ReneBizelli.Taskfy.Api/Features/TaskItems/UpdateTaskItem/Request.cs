@@ -13,6 +13,7 @@ public record Request : IRequest<Response>, IUserRequest
     public string ResponsibleExternalId { get; set; } = string.Empty;
     public Guid TaskExternalId { get; set; } = Guid.Empty;
     public int UserId { get; set; }
+    public UserRoles UserRole { get; set; } = UserRoles.None;
 
     public Guid UserExternalId
     {

@@ -19,6 +19,10 @@ public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IE
             }
             problemDetails.Extensions.Add("errors", validationErrors);
         }
+        else if (exception is UnauthorizedAccessException)
+        {
+            httpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        }
         else
         {
             problemDetails.Title = exception.Message;
