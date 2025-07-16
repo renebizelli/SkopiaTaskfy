@@ -15,8 +15,8 @@ public record ResultMany<T> where T : class
     public int Count { get { return Data.Count(); } }
     public IList<T> Data { get; set; } = [];
 
-    public ResultMany(IList<T> data)
+    public ResultMany(IEnumerable<T> data)
     {
-        Data = data;
+        Data = data.ToList();
     }
 }

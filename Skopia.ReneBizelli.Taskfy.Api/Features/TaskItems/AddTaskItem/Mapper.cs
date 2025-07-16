@@ -4,7 +4,7 @@ namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 
 public static class Mapper
 {
-    public static TaskItem Map(this Request request)
+    public static TaskItem Map(this Request request, int projectId)
      => new TaskItem
      {
          ExternalId = Guid.NewGuid(),
@@ -15,6 +15,7 @@ public static class Mapper
          Active = true,
          Priority = request.Priority,
          Status = request.Status,
+         ProjectId = projectId
      };
 
 }

@@ -1,5 +1,12 @@
-﻿namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
+﻿using OneOf;
+using Skopia.ReneBizelli.Taskfy.Api.Utils;
 
-public record Response
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
+
+public class Response : OneOfBase<ResponseType, ErrorType>
 {
+    public Response(OneOf<ResponseType, ErrorType> input) : base(input) { }
+
+    public static implicit operator Response(ResponseType _) => new Response(_);
+    public static implicit operator Response(ErrorType error) => new Response(error);
 }

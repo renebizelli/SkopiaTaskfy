@@ -4,6 +4,10 @@ using Skopia.ReneBizelli.Taskfy._Shared.Infrastructure.Database;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Manager;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.UserRequest;
 using Skopia.ReneBizelli.Taskfy.Api.Behaviors.Validators;
+using Skopia.ReneBizelli.Taskfy.Api.Features.Projects.AddProject;
+using Skopia.ReneBizelli.Taskfy.Api.Features.Projects.ListProjects;
+using Skopia.ReneBizelli.Taskfy.Api.Features.Projects.RemoveProject;
+using Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.AddTaskItem;
 using Skopia.ReneBizelli.Taskfy.Api.GlobalException;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 using System.Reflection;
@@ -38,6 +42,15 @@ services.AddTaskfyDBContext(builder.Configuration);
 services.AddEndpoints(assembly);
 
 services.Configure<ProjectSettings>(builder.Configuration.GetSection("Features:Projects"));
+
+#region Features
+
+services.AddListProjectFeature();
+services.AddProjectFeature();
+services.AddRemoveproject();
+services.AddTaskItemFeature();
+
+#endregion
 
 var app = builder.Build();
 

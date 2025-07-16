@@ -12,5 +12,6 @@ internal static class Mapper
             Active = true,
             CreatedAt = DateTime.Now,
             TaskItemsLimit = taskLimit,
+            AuthorId = userId
         };
 }

@@ -13,8 +13,11 @@ internal class Endpoint : IEndpoint
 
     public async Task<IResult> Handler(ISender sender, [FromBody] Request request, CancellationToken cancellationToken)
     {
-        await sender.Send(request, cancellationToken);
+        var response = await sender.Send(request, cancellationToken);
 
-        return Results.Ok();
+        return response.Match(
+            ok => Results.Ok(),
+            error => Results.StatusCode((int)error.httpStatusCode)
+        );
     }
 }

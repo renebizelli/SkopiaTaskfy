@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Skopia.ReneBizelli.Taskfy.Api.Structure;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.RemoveProject;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.RemoveProject;
 
 internal class Endpoint : IEndpoint
 {

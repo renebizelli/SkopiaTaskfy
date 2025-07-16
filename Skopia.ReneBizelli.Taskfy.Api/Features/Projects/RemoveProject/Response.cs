@@ -1,7 +1,7 @@
 ﻿using OneOf;
 using Skopia.ReneBizelli.Taskfy.Api.Utils;
 
-namespace Skopia.ReneBizelli.Taskfy.Api.Features.TaskItems.RemoveProject;
+namespace Skopia.ReneBizelli.Taskfy.Api.Features.Projects.RemoveProject;
 
 public class Response : OneOfBase<ResponseType, ErrorType>
 {
