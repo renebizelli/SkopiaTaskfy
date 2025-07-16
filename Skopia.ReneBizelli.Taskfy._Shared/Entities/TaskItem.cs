@@ -8,6 +8,7 @@ public class TaskItem
     public string Description { get; set; } = string.Empty;
     public DateTime DueAt { get; set; } = DateTime.Now;
     public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public DateTime? DoneAt { get; set; }
     public bool Active { get; set; }
     public StatusTaskItem Status { get; set; }
     public PriorityTaskItem Priority { get; set; }

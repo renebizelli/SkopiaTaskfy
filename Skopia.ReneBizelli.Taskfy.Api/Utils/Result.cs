@@ -12,6 +12,7 @@ public record ResultOne <T> where T : class
 
 public record ResultMany<T> where T : class
 {
+    public int Count { get { return Data.Count(); } }
     public IList<T> Data { get; set; } = [];
 
     public ResultMany(IList<T> data)
