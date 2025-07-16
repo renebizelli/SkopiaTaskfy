@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "4adf9ae4-16db-4a2e-a27e-dabf66d6c055",
+		"name": "Skopia.ReneBizelli.Taskfy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2229942",
+		"_collection_link": "https://dark-meadow-454625.postman.co/workspace/Estudos~e60a33d1-9410-4194-b78b-4a36cd870465/collection/2229942-4adf9ae4-16db-4a2e-a27e-dabf66d6c055?action=share&source=collection_link&creator=2229942"
+	},
+	"item": [
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Add project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"sdf sdf df\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/taskitems/projects/cd63f222-16a2-4a4e-be57-c381483e097b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"projects",
+								"cd63f222-16a2-4a4e-be57-c381483e097b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"sdfsdfsdfsdf\",\r\n    \"description\" : \"sdfsdfsdf\",\r\n    \"status\" : 1,\r\n    \"priority\" : 2,\r\n    \"dueAt\" : \"2025-07-16\",\r\n    \"UserResponsibleExternalId\" : \"C98F144D-291C-4425-B234-0AB7625318FA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/projects/74056685-b954-4055-b9dd-77d1c71ed30c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								"74056685-b954-4055-b9dd-77d1c71ed30c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/projects/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"projects",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TaskItems",
+			"item": [
+				{
+					"name": "List taskitem",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/taskitems/projects/cd63f222-16a2-4a4e-be57-c381483e097b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"projects",
+								"cd63f222-16a2-4a4e-be57-c381483e097b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"teste task sem respo\",\r\n    \"description\" : \"sdfsdfsdf\",\r\n    \"status\" : 1,\r\n    \"priority\" : 2,\r\n    \"dueAt\" : \"2025-07-16\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/taskitems/projects/cd63f222-16a2-4a4e-be57-c381483e097b",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"projects",
+								"cd63f222-16a2-4a4e-be57-c381483e097b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"alterado 1 !!!xxxxx\",\r\n    \"description\" : \"alteerado tb !!!\",\r\n    \"status\" : 1,\r\n    \"dueAt\" : \"2025-07-20\",\r\n    \"UserResponsibleExternalId\" : \"4666f13c-63a8-4007-9765-c29b10323e94\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/taskitems/66c208e5-31cd-4a47-b3a7-256c6fb7eed3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"66c208e5-31cd-4a47-b3a7-256c6fb7eed3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commentary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"commentary\" : \"sdf db dfg sdfg sdf \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/taskitems/commentary/66c208e5-31cd-4a47-b3a7-256c6fb7eed3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"commentary",
+								"66c208e5-31cd-4a47-b3a7-256c6fb7eed3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"sdfsdfsdfsdf\",\r\n    \"description\" : \"sdfsdfsdf\",\r\n    \"status\" : 1,\r\n    \"priority\" : 2,\r\n    \"dueAt\" : \"2025-07-16\",\r\n    \"UserResponsibleExternalId\" : \"C98F144D-291C-4425-B234-0AB7625318FA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/taskitems/785d9089-6923-4dcc-a292-0b3c8d130044",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"taskitems",
+								"785d9089-6923-4dcc-a292-0b3c8d130044"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Performance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-User-External-Id",
+								"value": "C98F144D-291C-4425-B234-0AB7625318FA",
+								"description": "René Bizelli - Admin",
+								"type": "text"
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "39B07325-81A5-4B23-B8D3-83800CB33C63",
+								"description": "Julia Martins - Analyst",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-User-External-Id",
+								"value": "4336A98F-A3C2-4473-92A9-41192B11538B",
+								"description": "Cristiane - Admin",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/reports/performance/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"reports",
+								"performance",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
